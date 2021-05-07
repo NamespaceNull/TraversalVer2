@@ -621,6 +621,9 @@
  <Reference Include="UnityEngine.Advertisements">
  <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/UnityEngine.Advertisements.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.2D.SpriteShape.Editor">
+ <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.Purchasing">
  <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
  </Reference>
@@ -629,6 +632,9 @@
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Path.Editor">
+ <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
@@ -648,11 +654,23 @@
  <Reference Include="Unity.Rider.Editor">
  <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.Mathematics">
+ <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.InternalAPIEngineBridge.001">
+ <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.2D.Sprite.Editor">
  <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.2D.Common.Runtime">
+ <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.2D.Tilemap.Editor">
  <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.SpriteShape.Runtime">
+ <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.SpatialTracking">
  <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
@@ -660,8 +678,14 @@
  <Reference Include="UnityEngine.SpatialTracking">
  <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.Mathematics.Editor">
+ <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.TextMeshPro">
  <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Common.Editor">
+ <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.DataPrivacy">
  <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
@@ -669,38 +693,14 @@
  <Reference Include="UnityEditor.XR.LegacyInputHelpers">
  <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.InternalAPIEditorBridge.001">
+ <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="com.unity.multiplayer-hlapi.Runtime">
  <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.SpriteShape.Editor">
- <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Path.Editor">
- <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Mathematics">
- <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
- </Reference>
- <Reference Include="Unity.InternalAPIEngineBridge.001">
- <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Common.Runtime">
- <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.SpriteShape.Runtime">
- <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Mathematics.Editor">
- <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Common.Editor">
- <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.InternalAPIEditorBridge.001">
- <HintPath>C:/Users/Admin/Desktop/Namespace Null/TraversalVer2/OGPC Project Prototyping/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
