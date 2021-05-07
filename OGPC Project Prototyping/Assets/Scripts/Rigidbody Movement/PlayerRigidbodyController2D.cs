@@ -95,7 +95,7 @@ public class PlayerRigidbodyController2D : MonoBehaviour
     }
 
     // if the player stays on the ground for some time, let them jump again \\
-    void OnCollisionEnter(Collision hit) {
+    void OnCollisionEnter2D(Collision2D hit) {
         // player collision with the ground and platforms
         if (hit.gameObject.tag == "Ground" || hit.gameObject.tag == "Platform") {
             isGrounded = true;
@@ -118,7 +118,7 @@ public class PlayerRigidbodyController2D : MonoBehaviour
 
     // if the isGrounded doesn't reset to true, set it to true once the player
     // has stayed on the ground for a while \\
-    void OnCollisionStay(Collision hit) {
+    void OnCollisionStay2D(Collision2D hit) {
         if (hit.gameObject.tag == "Ground" || hit.gameObject.tag == "Platform") {
             isGrounded = true;
         }
@@ -126,7 +126,7 @@ public class PlayerRigidbodyController2D : MonoBehaviour
 
     // on trigger stuff that checks if the player is in goop
     // and changes the player speed accordingly \\
-	void OnTriggerEnter(Collider col) {
+	void OnTriggerEnter2D(Collider2D col) {
 		if (col.gameObject.tag == "goop") {
 			speed /= speedFactor;
 		}
@@ -140,7 +140,7 @@ public class PlayerRigidbodyController2D : MonoBehaviour
             isGrounded = false;
         }
 	}
-    void OnTriggerExit(Collider col) {
+    void OnTriggerExit2D(Collider2D col) {
         if (col.gameObject.tag == "goop") {
             speed = 7f;
         }
