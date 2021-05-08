@@ -49,9 +49,11 @@
      <Compile Include="Assets\Scripts\Sector 1 Mechanics\goop.cs" />
      <Compile Include="Assets\Scripts\Sector 1 Mechanics\goop2D.cs" />
      <Compile Include="Assets\Scripts\Sector 2 Mechanics\Port.cs" />
+     <Compile Include="Assets\Scripts\Sector 2 Mechanics\Port2D.cs" />
      <Compile Include="Assets\Scripts\Sector 2 Mechanics\sleek.cs" />
      <Compile Include="Assets\Scripts\Sector 2 Mechanics\sleek2D.cs" />
      <Compile Include="Assets\Scripts\Sector 3 Mechanics\Ire.cs" />
+     <Compile Include="Assets\Scripts\Sector 3 Mechanics\Ire2D.cs" />
      <Compile Include="Assets\Scripts\Sector 3 Mechanics\Spring.cs" />
      <Compile Include="Assets\Scripts\Sector 3 Mechanics\spring2D.cs" />
     <Reference Include="UnityEngine">

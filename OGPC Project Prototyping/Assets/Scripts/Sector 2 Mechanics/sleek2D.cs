@@ -18,7 +18,7 @@ public class sleek2D : MonoBehaviour
     }
 
     // checking if the player is in the sleek \\
-    void OnTriggerEnter(Collider other) {
+    void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag == "Player") {
             playerRB.mass = massInSleek;
             StopAllCoroutines();
@@ -26,7 +26,7 @@ public class sleek2D : MonoBehaviour
     }
 
     // reverting changes once the player leaves the sleek \\
-    void OnTriggerExit(Collider other) {
+    void OnTriggerExit2D(Collider2D other) {
         if (other.gameObject.tag == "Player") {
             StartCoroutine("timer");
         }

@@ -16,8 +16,8 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
     public float ireBurst = 14f;
     public bool inIre = false;
     // jump variables \\
-    private Vector3 jump;
-    public float jumpForce = 5f;
+    private Vector2 jump;
+    public float jumpForce = 10f;
     public bool isGrounded = true;
     // gliding variables \\
     public bool isGliding = false;
@@ -30,7 +30,7 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
     void Start() {
         rb = GetComponent<Rigidbody2D>();
         //jump = new Vector3(0f, 2f, 0f);
-        jump = new Vector3(-2f, -2f, -2f);
+        jump = new Vector2(0f, 2f);
     }
 
     // where most of the code is going to be \\
@@ -40,7 +40,7 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
         // the act of moving the player across the screen
         float mH = Input.GetAxis("Horizontal");
         if (!isStick) {
-            rb.velocity = new Vector3(mH * speed, rb.velocity.y, 0f);
+            rb.velocity = new Vector2(mH * speed, rb.velocity.y);
         }
 
         // player jump 
@@ -55,9 +55,6 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
         }
 
         // gliding mechanic \\
-        if (rb.velocity.y > 0) { // so if the player is in the air, turn off isGrounded 
-            isGrounded = false;
-        }
         // checking if the player can glide
         if (Input.GetKey(KeyCode.W) && !isGrounded) {
             isGliding = true;
@@ -90,13 +87,13 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
         // if the player lets go of the 'W' key or isStick is false for some reason, reset isStick and useGravity
         if (Input.GetKeyUp(KeyCode.W) || isStick == false) {
             isStick = false;
+            isGrounded = false;
             rb.gravityScale = 1;
-            //rb.useGravity = true;
         }
     }
 
     // if the player stays on the ground for some time, let them jump again \\
-    void OnCollisionEnter(Collision hit) {
+    void OnCollisionEnter2D(Collision2D hit) {
         // player collision with the ground and platforms
         if (hit.gameObject.tag == "Ground" || hit.gameObject.tag == "Platform") {
             isGrounded = true;
@@ -104,10 +101,9 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
         }
         // player collision with walls and moving walls
         if (hit.gameObject.tag == "Moving Wall" || hit.gameObject.tag == "Wall") {
-            isGrounded = true;
             if (Input.GetKey(KeyCode.W)) {
                 rb.gravityScale = 0;
-                //rb.useGravity = false;
+                isGrounded = true;
                 isStick = true; 
             }
         }
@@ -119,15 +115,22 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
 
     // if the isGrounded doesn't reset to true, set it to true once the player
     // has stayed on the ground for a while \\
-    void OnCollisionStay(Collision hit) {
+    void OnCollisionStay2D(Collision2D hit) {
         if (hit.gameObject.tag == "Ground" || hit.gameObject.tag == "Platform") {
             isGrounded = true;
         }
     }
 
+    // making sure isGrounded is false when the player is in the air \\
+    void OnCollisionExit2D(Collision2D hit) {
+        if (hit.gameObject.tag == "Ground" || hit.gameObject.tag == "Platform") {
+            isGrounded = false;
+        }
+    }
+
     // on trigger stuff that checks if the player is in goop
     // and changes the player speed accordingly \\
-	void OnTriggerEnter(Collider col) {
+	void OnTriggerEnter2D(Collider2D col) {
 		if (col.gameObject.tag == "goop") {
 			speed /= speedFactor;
 		}
@@ -141,7 +144,7 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
             isGrounded = false;
         }
 	}
-    void OnTriggerExit(Collider col) {
+    void OnTriggerExit2D(Collider2D col) {
         if (col.gameObject.tag == "goop") {
             speed = 7f;
         }

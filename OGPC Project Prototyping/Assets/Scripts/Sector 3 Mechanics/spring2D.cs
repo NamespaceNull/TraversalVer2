@@ -15,9 +15,8 @@ public class spring2D : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag == "Player") {
-            Debug.Log("h");
             // get the player's velocity \\
-            Vector3 vel = playerRB.velocity;
+            Vector2 vel = playerRB.velocity;
 
             // adding that velocity in the force times a multiplier in the opposite direction \\
             playerRB.AddForce(-vel * springForce, ForceMode2D.Impulse);

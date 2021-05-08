@@ -18,7 +18,7 @@ public class goop2D : MonoBehaviour
     }
 
     // checking if the player enters the goop \\
-    void OnTriggerEnter(Collider other) {
+    void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag == "Player") {
             playerRB.mass = massInGoop;
             StopAllCoroutines();
@@ -26,7 +26,7 @@ public class goop2D : MonoBehaviour
     }
 
     // reverting the player mass back when they leave the goop
-    void OnTriggerExit(Collider other) {
+    void OnTriggerExit2D(Collider2D other) {
         if (other.gameObject.tag == "Player") {
             StartCoroutine("timer");
         }
