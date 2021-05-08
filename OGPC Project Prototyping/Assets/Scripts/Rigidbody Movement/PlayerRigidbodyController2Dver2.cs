@@ -80,10 +80,6 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
                 // make the player wall jump and un-stick them from the wall
                 rb.AddForce(jump * wallJumpForce, ForceMode2D.Impulse);
                 isStick = false;
-                // if the player was parented to a moving wall, unparent them
-                if (transform.parent) {
-                    transform.parent = null;
-                }
             }
         }
         // if the player lets go of the 'W' key or isStick is false for some reason, reset isStick and useGravity
@@ -95,29 +91,23 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
 
     // if the player stays on the ground for some time, let them jump again \\
     void OnCollisionEnter2D(Collision2D hit) {
-        // player collision with the ground and platforms
-        if (hit.gameObject.tag == "Ground" || hit.gameObject.tag == "Platform") {
-            isGrounded = true;
-            isGliding = false;
-        }
-        // player collision with walls and moving walls
-        if (hit.gameObject.tag == "Moving Wall" || hit.gameObject.tag == "Wall") {
+        Collider2D collider = hit.collider;
+
+        Vector3 contactPoint = hit.contacts[0].point;
+        Vector3 center = collider.bounds.center;
+
+        bool right = contactPoint.x > center.x;
+
+        //Debug.Log("Right: " + right);
+
+        if (right) {
             if (Input.GetKey(KeyCode.W)) {
                 rb.gravityScale = 0;
-                isGrounded = true;
-                isStick = true; 
+                isGrounded = false;
+                isStick = true;
             }
         }
-        // if the player collides with a moving wall, parent them to the wall to allow them to move with it
-        if (hit.gameObject.tag == "Moving Wall") {
-            gameObject.transform.parent = hit.gameObject.transform;
-        }
-    }
-
-    // if the isGrounded doesn't reset to true, set it to true once the player
-    // has stayed on the ground for a while \\
-    void OnCollisionStay2D(Collision2D hit) {
-        if (hit.gameObject.tag == "Ground" || hit.gameObject.tag == "Platform") {
+        else {
             isGrounded = true;
             isGliding = false;
         }
@@ -126,9 +116,6 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
     // making sure isGrounded is false when the player is in the air \\
     void OnCollisionExit2D(Collision2D hit) {
         if (hit.gameObject.tag == "Ground" || hit.gameObject.tag == "Platform") {
-            isGrounded = false;
-        }
-        if (hit.gameObject.tag == "Wall") {
             isGrounded = false;
         }
     }
