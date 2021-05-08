@@ -12,6 +12,7 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
     public Rigidbody2D rb;
     // movement variables \\
     public float speed = 7f;
+    public float fullGravity = 1.2f;
     public int speedFactor = 2;
     public float ireBurst = 14f;
     public bool inIre = false;
@@ -25,6 +26,7 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
     // wall stick variables \\
     public bool isStick = false;
     public float wallJumpForce = 15f;
+
 
     // getting necessary variables at the start of the program \\
     void Start() {
@@ -87,7 +89,7 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
         // if the player lets go of the 'W' key or isStick is false for some reason, reset isStick and useGravity
         if (Input.GetKeyUp(KeyCode.W) || isStick == false) {
             isStick = false;
-            rb.gravityScale = 1;
+            rb.gravityScale = fullGravity;
         }
     }
 
