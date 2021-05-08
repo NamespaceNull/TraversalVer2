@@ -87,7 +87,6 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
         // if the player lets go of the 'W' key or isStick is false for some reason, reset isStick and useGravity
         if (Input.GetKeyUp(KeyCode.W) || isStick == false) {
             isStick = false;
-            isGrounded = false;
             rb.gravityScale = 1;
         }
     }
@@ -118,12 +117,16 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
     void OnCollisionStay2D(Collision2D hit) {
         if (hit.gameObject.tag == "Ground" || hit.gameObject.tag == "Platform") {
             isGrounded = true;
+            isGliding = false;
         }
     }
 
     // making sure isGrounded is false when the player is in the air \\
     void OnCollisionExit2D(Collision2D hit) {
         if (hit.gameObject.tag == "Ground" || hit.gameObject.tag == "Platform") {
+            isGrounded = false;
+        }
+        if (hit.gameObject.tag == "Wall") {
             isGrounded = false;
         }
     }
