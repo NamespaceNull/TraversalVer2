@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1101,7 +1101,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1352108403}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -38.1, y: 12.2, z: -2}
+  m_LocalPosition: {x: -37.199997, y: 105.439995, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1300,7 +1300,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1401551526}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 121.19, y: -16.78, z: -2}
+  m_LocalPosition: {x: 122.090004, y: 76.46, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1509,7 +1509,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506723243}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 132.3, y: -15.9, z: -2}
+  m_LocalPosition: {x: 133.20001, y: 77.34, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1553,10 +1553,10 @@ EdgeCollider2D:
   - {x: -40.573135, y: -60.52}
   - {x: -39.573135, y: 98.98}
   - {x: 391.92688, y: 107.73}
-  - {x: 230.92686, y: 36.73}
-  - {x: 230.92686, y: -2.77}
-  - {x: 219.92686, y: -2.77}
-  - {x: 208.17686, y: -9.02}
+  - {x: 223.92686, y: 27.48}
+  - {x: 223.92686, y: -3.02}
+  - {x: 211.92686, y: -3.02}
+  - {x: 205.92686, y: -9.02}
   - {x: 199.92686, y: -9.02}
   - {x: 199.92686, y: -1.02}
   - {x: 203.92686, y: -1.02}
@@ -1712,11 +1712,11 @@ EdgeCollider2D:
   - {x: 189.42686, y: -10.52}
   - {x: 191.17686, y: -10.52}
   - {x: 191.67686, y: -11.02}
-  - {x: 209.92686, y: -11.02}
-  - {x: 221.92686, y: -6.02}
-  - {x: 234.92686, y: -6.02}
-  - {x: 234.92686, y: 34.98}
-  - {x: 243.92686, y: 34.98}
+  - {x: 207.92686, y: -11.02}
+  - {x: 215.92686, y: -7.02}
+  - {x: 226.92686, y: -7.02}
+  - {x: 226.92686, y: 23.98}
+  - {x: 243.92686, y: 32.48}
   - {x: 437.67688, y: -105.27}
   - {x: -17.333727, y: -62.69452}
   - {x: -34.479877, y: -61.09015}
@@ -1763,7 +1763,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: 230.92686, y: 36.73, z: 0}
+    - position: {x: 223.92686, y: 27.48, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -1772,7 +1772,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: 230.92686, y: -2.77, z: 0}
+    - position: {x: 223.92686, y: -3.02, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -1781,7 +1781,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: 219.92686, y: -2.77, z: 0}
+    - position: {x: 211.92686, y: -3.02, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -1790,7 +1790,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: 208.17686, y: -9.02, z: 0}
+    - position: {x: 205.92686, y: -9.02, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -2546,7 +2546,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: 209.92686, y: -11.02, z: 0}
+    - position: {x: 207.92686, y: -11.02, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -2555,7 +2555,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: 221.92686, y: -6.02, z: 0}
+    - position: {x: 215.92686, y: -7.02, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -2564,7 +2564,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: 234.92686, y: -6.02, z: 0}
+    - position: {x: 226.92686, y: -7.02, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -2573,7 +2573,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: 234.92686, y: 34.98, z: 0}
+    - position: {x: 226.92686, y: 23.98, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -2582,7 +2582,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: 243.92686, y: 34.98, z: 0}
+    - position: {x: 243.92686, y: 32.48, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -2670,7 +2670,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1521949195}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -59.926865, y: 1.02, z: -2}
+  m_LocalPosition: {x: -59.026863, y: 94.259995, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2862,7 +2862,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1660338039}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.06, y: 3.465, z: -6.424}
+  m_LocalPosition: {x: 0.8400015, y: 96.704994, z: -6.424}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3121,6 +3121,7 @@ MonoBehaviour:
   drag: 15
   isStick: 0
   wallJumpForce: 15
+  contactQuantity: 0
 --- !u!23 &1859791352
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3176,7 +3177,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1859791348}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 137.8, y: -5.28, z: -2.09}
+  m_LocalPosition: {x: 127, y: 86.01, z: -2.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3484,7 +3485,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950967658}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 137.22, y: 1.11, z: -2}
+  m_LocalPosition: {x: 138.12, y: 94.35, z: -2}
   m_LocalScale: {x: 1, y: 0.9916719, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3900,7 +3901,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2053298223}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 88.9, y: -14.75, z: -2}
+  m_LocalPosition: {x: 89.8, y: 78.49, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

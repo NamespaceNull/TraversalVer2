@@ -26,6 +26,7 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
     // wall stick variables \\
     public bool isStick = false;
     public float wallJumpForce = 15f;
+    public int contactQuantity = 0;
 
 
     // getting necessary variables at the start of the program \\
@@ -89,8 +90,74 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
         }
     }
 
+
+    // these here is because the walls and ground are the same thing
+    void OnCollisionStay2D(Collision2D hit)
+    {
+        contactQuantity = hit.contactCount;
+        int goodPointCount = 0;
+
+        for (int i = 0; i < contactQuantity; i++)
+        {
+            if (hit.GetContact(i).point.y - (transform.position.y - 0.45) < 0)
+            {
+                goodPointCount++;
+            }
+        }
+
+        if (goodPointCount == contactQuantity)
+        {
+            isGrounded = true;
+            isGliding = false;
+        }
+        else
+        {
+            if (Input.GetKey(KeyCode.W))
+            {
+                rb.gravityScale = 0;
+                isGrounded = false;
+                isStick = true;
+            }
+            else
+            {
+                isGrounded = false;
+                isStick = false;
+            }
+        }
+    }
+
+
     // if the player stays on the ground for some time, let them jump again \\
     void OnCollisionEnter2D(Collision2D hit) {
+
+        contactQuantity = hit.contactCount;
+        int goodPointCount = 0;
+
+        for (int i = 0; i < contactQuantity; i++) {
+            if (hit.GetContact(i).point.y - (transform.position.y - 1) < 0) {
+                goodPointCount++;
+            }
+        }
+
+        if(goodPointCount==contactQuantity) {
+            isGrounded = true;
+            isGliding = false;
+        }
+        else {
+            if(Input.GetKey(KeyCode.W)) {
+                rb.gravityScale = 0;
+                isGrounded = false;
+                isStick = true;
+            }
+            else
+            {
+                isGrounded = false;
+                isStick = false;
+            }
+        }
+
+
+        /*
         Collider2D collider = hit.collider;
 
         Vector3 contactPoint = hit.contacts[0].point;
@@ -111,12 +178,14 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
             isGrounded = true;
             isGliding = false;
         }
+        */
     }
 
     // making sure isGrounded is false when the player is in the air \\
     void OnCollisionExit2D(Collision2D hit) {
         if (hit.gameObject.tag == "Ground" || hit.gameObject.tag == "Platform") {
             isGrounded = false;
+            isStick = false;
         }
     }
 
