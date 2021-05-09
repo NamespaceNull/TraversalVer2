@@ -27,6 +27,7 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
     public bool isStick = false;
     public float wallJumpForce = 15f;
     public int contactQuantity = 0;
+    public string previousStuckWall = "";
 
 
     // getting necessary variables at the start of the program \\
@@ -86,99 +87,57 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
         // if the player lets go of the 'W' key or isStick is false for some reason, reset isStick and useGravity
         if (Input.GetKeyUp(KeyCode.W) || isStick == false) {
             isStick = false;
-            rb.gravityScale = fullGravity;
+            rb.constraints = RigidbodyConstraints2D.None;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
     }
-
-
-    // these here is because the walls and ground are the same thing
-    void OnCollisionStay2D(Collision2D hit)
-    {
-        contactQuantity = hit.contactCount;
-        int goodPointCount = 0;
-
-        for (int i = 0; i < contactQuantity; i++)
-        {
-            if (hit.GetContact(i).point.y - (transform.position.y - 0.45) < 0)
-            {
-                goodPointCount++;
-            }
-        }
-
-        if (goodPointCount == contactQuantity)
-        {
-            isGrounded = true;
-            isGliding = false;
-        }
-        else
-        {
-            if (Input.GetKey(KeyCode.W))
-            {
-                rb.gravityScale = 0;
-                isGrounded = false;
-                isStick = true;
-            }
-            else
-            {
-                isGrounded = false;
-                isStick = false;
-            }
-        }
-    }
-
 
     // if the player stays on the ground for some time, let them jump again \\
     void OnCollisionEnter2D(Collision2D hit) {
+        // shoot raycasts to the right, left, and down to check for collisions \\
+        RaycastHit2D[] hitsRight = Physics2D.RaycastAll(transform.position, Vector2.right, 5);
+        RaycastHit2D[] hitsLeft = Physics2D.RaycastAll(transform.position, Vector2.left, 5);
+        RaycastHit2D[] hitsDown = Physics2D.RaycastAll(transform.position, Vector2.down, 2);
 
-        contactQuantity = hit.contactCount;
-        int goodPointCount = 0;
-
-        for (int i = 0; i < contactQuantity; i++) {
-            if (hit.GetContact(i).point.y - (transform.position.y - 1) < 0) {
-                goodPointCount++;
+        // if the player touches the ground \\
+        if (hitsDown.Length > 1) {
+            if (hitsDown[1].collider.gameObject.tag == "Ground") {
+                isGrounded = true;
+                isGliding = false;
+                previousStuckWall = "";
             }
         }
-
-        if(goodPointCount==contactQuantity) {
-            isGrounded = true;
-            isGliding = false;
-        }
+        // if the player touches a wall \\
         else {
-            if(Input.GetKey(KeyCode.W)) {
-                rb.gravityScale = 0;
-                isGrounded = false;
-                isStick = true;
+            // if the player touches a wall to their right \\
+            if (hitsRight.Length > 1) {
+                if (hitsRight[1].collider.gameObject.tag == "Ground") {
+                    // if the player previously stuck to a left-sided wall, let them stick to the right-sided wall
+                    if (previousStuckWall == "Left" || previousStuckWall == "") {
+                        if (Input.GetKey(KeyCode.W)) {
+                            rb.constraints = RigidbodyConstraints2D.FreezePosition;
+                            isGrounded = false;
+                            isStick = true;
+                            previousStuckWall = "Right";
+                        }
+                    }
+                }          
             }
-            else
-            {
-                isGrounded = false;
-                isStick = false;
+            // if the player touches a wall to their left \\
+            if (hitsLeft.Length > 1) {
+                if (hitsLeft[1].collider.gameObject.tag == "Ground") {
+                    // if the player previously stuck to a right-sided wall, let them stick to the left-sided wall
+                    if (previousStuckWall == "Right" || previousStuckWall == "") {
+                        if (Input.GetKey(KeyCode.W)) {
+                            rb.constraints = RigidbodyConstraints2D.FreezePosition;
+                            isGrounded = false;
+                            isStick = true;
+                            previousStuckWall = "Left";
+                        }
+                    }
+                } 
             }
         }
-
-
-        /*
-        Collider2D collider = hit.collider;
-
-        Vector3 contactPoint = hit.contacts[0].point;
-        Vector3 center = collider.bounds.center;
-
-        bool right = contactPoint.x > center.x;
-
-        //Debug.Log("Right: " + right);
-
-        if (right) {
-            if (Input.GetKey(KeyCode.W)) {
-                rb.gravityScale = 0;
-                isGrounded = false;
-                isStick = true;
-            }
-        }
-        else {
-            isGrounded = true;
-            isGliding = false;
-        }
-        */
     }
 
     // making sure isGrounded is false when the player is in the air \\

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4795,8 +4795,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1560354790}
   - component: {fileID: 1560354789}
-  - component: {fileID: 1560354788}
   - component: {fileID: 1560354787}
+  - component: {fileID: 1560354788}
   m_Layer: 0
   m_Name: Darkness Trigger (1)
   m_TagString: Untagged
@@ -4813,24 +4813,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 1560354786}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57077ca15e3858e43ae73f478f783842, type: 3}
+  m_Script: {fileID: 11500000, guid: 28725b6bea8504748b9d78bdad2da3a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   turnDark: 0
   manager: {fileID: 1782479218}
---- !u!65 &1560354788
-BoxCollider:
+--- !u!61 &1560354788
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560354786}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!23 &1560354789
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5539,6 +5552,7 @@ MonoBehaviour:
   isStick: 0
   wallJumpForce: 15
   contactQuantity: 0
+  previousStuckWall: 
 --- !u!23 &1859791352
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5594,7 +5608,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1859791348}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 96.6, y: 149.3, z: -2.09}
+  m_LocalPosition: {x: 161.7, y: 89.3, z: -2.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5610,8 +5624,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1929238891}
   - component: {fileID: 1929238890}
-  - component: {fileID: 1929238889}
   - component: {fileID: 1929238888}
+  - component: {fileID: 1929238889}
   m_Layer: 0
   m_Name: Darkness Trigger
   m_TagString: Untagged
@@ -5628,24 +5642,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 1929238887}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57077ca15e3858e43ae73f478f783842, type: 3}
+  m_Script: {fileID: 11500000, guid: 28725b6bea8504748b9d78bdad2da3a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   turnDark: 1
   manager: {fileID: 1782479218}
---- !u!65 &1929238889
-BoxCollider:
+--- !u!61 &1929238889
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1929238887}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!23 &1929238890
 MeshRenderer:
   m_ObjectHideFlags: 0
