@@ -14,7 +14,7 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
     public float speed = 7f;
     public float fullGravity = 1.2f;
     public int speedFactor = 2;
-    public float ireBurst = 14f;
+    public float ireBurst = 10f;
     public bool inIre = false;
     // jump variables \\
     private Vector2 jump;

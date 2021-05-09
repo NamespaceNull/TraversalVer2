@@ -7,7 +7,7 @@ public class Ire2D : MonoBehaviour
     // variables \\
     public int setDrag = 25;
     public bool inIre = false;
-    public float ireBurst = 125f;
+    public float ireBurst = 60f;
     public GameObject player;
     private Rigidbody2D playerRB;
 
@@ -36,7 +36,7 @@ public class Ire2D : MonoBehaviour
     void Update() {
         if (inIre) {
             if (Input.GetKeyDown(KeyCode.W)) {
-                playerRB.AddForce(new Vector3(0, ireBurst, 0), ForceMode2D.Impulse);
+                playerRB.AddForce(new Vector2(0, ireBurst), ForceMode2D.Impulse);
             }
         }
     }
