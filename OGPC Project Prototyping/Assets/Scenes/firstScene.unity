@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5601,6 +5601,8 @@ GameObject:
   - component: {fileID: 1660338041}
   - component: {fileID: 1660338040}
   - component: {fileID: 1660338044}
+  - component: {fileID: 1660338046}
+  - component: {fileID: 1660338045}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5696,6 +5698,116 @@ MonoBehaviour:
   target: {fileID: 1859791355}
   smoothSpeed: 1
   offset: {x: 0, y: 0, z: -10}
+--- !u!114 &1660338045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660338039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 625b8ed9ba1c86d4a9c24ea035a108dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEffects:
+  - name: 
+    clip: {fileID: 8300000, guid: 729adc6b3ead641498fb691b43364b24, type: 3}
+    playOnAwake: 0
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: 
+    clip: {fileID: 8300000, guid: cc995c2b308a0044ca815e2903277325, type: 3}
+    playOnAwake: 0
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: 
+    clip: {fileID: 8300000, guid: 89b22bc8ef983214fa7f56a4a6e3ee4f, type: 3}
+    playOnAwake: 0
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: 
+    clip: {fileID: 8300000, guid: eb1852656e230aa438e0ad5c4ebd1de1, type: 3}
+    playOnAwake: 0
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: 
+    clip: {fileID: 8300000, guid: feab4baa578c18746a666e8e9c2b503f, type: 3}
+    playOnAwake: 0
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: 
+    clip: {fileID: 8300000, guid: 4be876bacf976734da432b8227927a78, type: 3}
+    playOnAwake: 0
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: 
+    clip: {fileID: 8300000, guid: a5251fd261796094da7a6cde3bae4b1e, type: 3}
+    playOnAwake: 0
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: 
+    clip: {fileID: 8300000, guid: 9eed8da5b3793d84a9e28b7a94360a6c, type: 3}
+    playOnAwake: 0
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+--- !u!114 &1660338046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660338039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 346d3da2452930b4e9bc6930f2ef3b93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: 
+    clip: {fileID: 8300000, guid: e9f7156716efa1f4cb4ff1d43358fb19, type: 3}
+    playOnAwake: 0
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: 
+    clip: {fileID: 8300000, guid: b785029b67f942046818f622b867e480, type: 3}
+    playOnAwake: 0
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: 
+    clip: {fileID: 8300000, guid: de2e4fa5d03656f4d93054603cea50fb, type: 3}
+    playOnAwake: 0
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: 
+    clip: {fileID: 8300000, guid: 038da4d5acad16b48aaa904503af151a, type: 3}
+    playOnAwake: 0
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
 --- !u!1 &1675385661
 GameObject:
   m_ObjectHideFlags: 0
@@ -5815,6 +5927,7 @@ GameObject:
   - component: {fileID: 1679725000}
   - component: {fileID: 1679724999}
   - component: {fileID: 1679724998}
+  - component: {fileID: 1679725003}
   m_Layer: 0
   m_Name: Spring (2)
   m_TagString: Spring
@@ -5923,6 +6036,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1679725003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679724997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bdc14f3c682e841b32a2b39ff7becb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enter_Sound:
+    name: 
+    clip: {fileID: 8300000, guid: 3b258f53f9dd2284bb6ed220ebf7e1c0, type: 3}
+    playOnAwake: 0
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  Exit_Sound:
+    name: 
+    clip: {fileID: 0}
+    playOnAwake: 0
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
 --- !u!1 &1697816722
 GameObject:
   m_ObjectHideFlags: 0
@@ -5934,6 +6075,7 @@ GameObject:
   - component: {fileID: 1697816725}
   - component: {fileID: 1697816724}
   - component: {fileID: 1697816723}
+  - component: {fileID: 1697816726}
   m_Layer: 0
   m_Name: Lumen (2)
   m_TagString: Untagged
@@ -6032,6 +6174,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1697816726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697816722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e09be04db0234c499607b37364db09a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  s:
+    name: 
+    clip: {fileID: 8300000, guid: 563e1334ad8680542a43124a2b8c55fb, type: 3}
+    playOnAwake: 0
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  maxDistance: 0
 --- !u!1 &1723508242
 GameObject:
   m_ObjectHideFlags: 0
@@ -6305,6 +6468,7 @@ GameObject:
   - component: {fileID: 1805288393}
   - component: {fileID: 1805288392}
   - component: {fileID: 1805288391}
+  - component: {fileID: 1805288396}
   m_Layer: 0
   m_Name: Ire (1)
   m_TagString: Ire
@@ -6415,6 +6579,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1805288396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805288390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bdc14f3c682e841b32a2b39ff7becb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enter_Sound:
+    name: 
+    clip: {fileID: 0}
+    playOnAwake: 0
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  Exit_Sound:
+    name: 
+    clip: {fileID: 0}
+    playOnAwake: 0
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
 --- !u!1 &1859791348
 GameObject:
   m_ObjectHideFlags: 0
@@ -6554,7 +6746,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1859791348}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.83, y: 188.62, z: -2.09}
+  m_LocalPosition: {x: 174.8, y: 120.5, z: -2.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
