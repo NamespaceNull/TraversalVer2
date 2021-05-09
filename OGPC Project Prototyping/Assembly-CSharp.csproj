@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\Rigidbody Movement\PlayerCharacterController.cs" />
      <Compile Include="Assets\Scripts\Rigidbody Movement\PlayerRigidbodyController.cs" />
      <Compile Include="Assets\Scripts\Rigidbody Movement\PlayerRigidbodyController2D.cs" />
+     <Compile Include="Assets\Scripts\Rigidbody Movement\PlayerRigidbodyController2DStates.cs" />
      <Compile Include="Assets\Scripts\Rigidbody Movement\PlayerRigidbodyController2Dver2.cs" />
      <Compile Include="Assets\Scripts\Sector 1 Mechanics\LumenLight.cs" />
      <Compile Include="Assets\Scripts\Sector 1 Mechanics\goop.cs" />
