@@ -34,6 +34,11 @@ public class Sound_Effects : MonoBehaviour
         soundEffects[2].source.loop = true;
         // Glide End
         soundEffects[3].source.volume = .5F;
+        //Jumps
+        soundEffects[4].source.volume = .5F;
+        soundEffects[5].source.volume = .5F;
+        soundEffects[6].source.volume = .5F;
+        soundEffects[7].source.volume = .5F;
     }
 
     void Start()

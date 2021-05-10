@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311926, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2255,6 +2255,14 @@ MonoBehaviour:
     pitch: 0
     loop: 0
     source: {fileID: 0}
+  Inside_Sound:
+    name: 
+    clip: {fileID: 0}
+    playOnAwake: 0
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
 --- !u!61 &493709196
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4034,6 +4042,14 @@ MonoBehaviour:
     pitch: 0
     loop: 0
     source: {fileID: 0}
+  Inside_Sound:
+    name: 
+    clip: {fileID: 0}
+    playOnAwake: 0
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
 --- !u!61 &1007941729
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5047,6 +5063,14 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   Exit_Sound:
+    name: 
+    clip: {fileID: 0}
+    playOnAwake: 0
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  Inside_Sound:
     name: 
     clip: {fileID: 0}
     playOnAwake: 0
@@ -8676,6 +8700,14 @@ MonoBehaviour:
     pitch: 0
     loop: 0
     source: {fileID: 0}
+  Inside_Sound:
+    name: 
+    clip: {fileID: 0}
+    playOnAwake: 0
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
 --- !u!61 &1560457984
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9516,13 +9548,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enter_Sound:
     name: 
-    clip: {fileID: 8300000, guid: 3b258f53f9dd2284bb6ed220ebf7e1c0, type: 3}
+    clip: {fileID: 8300000, guid: 059be98f0c5284348a06061c69be742d, type: 3}
     playOnAwake: 0
     volume: 0
     pitch: 0
     loop: 0
     source: {fileID: 0}
   Exit_Sound:
+    name: 
+    clip: {fileID: 0}
+    playOnAwake: 0
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  Inside_Sound:
     name: 
     clip: {fileID: 0}
     playOnAwake: 0
@@ -10059,13 +10099,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enter_Sound:
     name: 
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: de5c09f4076545544b061af6c0258ba7, type: 3}
     playOnAwake: 0
     volume: 0
     pitch: 0
     loop: 0
     source: {fileID: 0}
   Exit_Sound:
+    name: 
+    clip: {fileID: 8300000, guid: 4a410ab91010fe24cbd1cdeddb172157, type: 3}
+    playOnAwake: 0
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  Inside_Sound:
     name: 
     clip: {fileID: 0}
     playOnAwake: 0
@@ -10211,7 +10259,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1859791348}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 118.3, y: 230.1, z: -2.09}
+  m_LocalPosition: {x: 49.7, y: 190.6, z: -2.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
