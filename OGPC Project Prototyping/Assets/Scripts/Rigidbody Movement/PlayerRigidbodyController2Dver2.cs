@@ -164,6 +164,10 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
         if (col.gameObject.tag == "Spring") {
             isGrounded = false;
         }
+        if (col.gameObject.tag == "Narrative Trigger") {
+            Debug.Log("working");
+            col.GetComponent<Narrative_trigger_script>().GetTriggerAction(rb.velocity);
+        }
 	}
     void OnTriggerExit2D(Collider2D col) {
         if (col.gameObject.tag == "goop") {

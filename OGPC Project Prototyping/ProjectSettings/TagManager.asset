@@ -13,6 +13,9 @@ TagManager:
   - sleek
   - Spring
   - Ire
+  - Narrative Trigger
+  - UIPermanent
+  - UISituational
   layers:
   - Default
   - TransparentFX
