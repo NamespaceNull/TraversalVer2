@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class sleek2D : MonoBehaviour
 {
+    public static bool inSleek = false;
     // what the player's mass will be while in the sleek \\
     public float massInSleek = 0.75f;
     // the liquid will still have an effect on the player after moveTimer miliseconds \\
@@ -20,6 +21,7 @@ public class sleek2D : MonoBehaviour
     // checking if the player is in the sleek \\
     void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag == "Player") {
+            inSleek = true;
             playerRB.mass = massInSleek;
             StopAllCoroutines();
         }
@@ -28,6 +30,7 @@ public class sleek2D : MonoBehaviour
     // reverting changes once the player leaves the sleek \\
     void OnTriggerExit2D(Collider2D other) {
         if (other.gameObject.tag == "Player") {
+            inSleek = false;
             StartCoroutine("timer");
         }
     }

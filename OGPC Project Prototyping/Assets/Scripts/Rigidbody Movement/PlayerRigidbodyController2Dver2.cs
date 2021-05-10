@@ -16,6 +16,7 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
     public int speedFactor = 2;
     public float ireBurst = 10f;
     public bool inIre = false;
+    public static bool inSleek = false;
     // jump variables \\
     private Vector2 jump;
     public float jumpForce = 10f;
@@ -100,10 +101,6 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
 
     // if the player stays on the ground for some time, let them jump again \\
     void OnCollisionEnter2D(Collision2D hit) {
-        Debug.Log(hit.contacts[0].point);
-        Debug.Log(transform.position);
-        Debug.Log("");
-
         // if the player touches the ground \\
         if (hit.contacts[0].point.y < transform.position.y) {
             isGrounded = true;
@@ -111,7 +108,8 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
             previousStuckWall = "";
         }
         // if the player touches the wall \\
-        if (Input.GetKey(KeyCode.W)) {
+        if (Input.GetKey(KeyCode.W) && !sleek2D.inSleek) {
+            Debug.Log("h");
             // Left wall \\
             if (hit.contacts[0].point.x < transform.position.x) {
                 if (previousStuckWall == "Right" || previousStuckWall == "") {
