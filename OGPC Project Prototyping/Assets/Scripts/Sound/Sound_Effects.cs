@@ -35,10 +35,10 @@ public class Sound_Effects : MonoBehaviour
         // Glide End
         soundEffects[3].source.volume = .5F;
         //Jumps
-        soundEffects[4].source.volume = .5F;
-        soundEffects[5].source.volume = .5F;
-        soundEffects[6].source.volume = .5F;
-        soundEffects[7].source.volume = .5F;
+        soundEffects[4].source.volume = .3F;
+        soundEffects[5].source.volume = .3F;
+        soundEffects[6].source.volume = .3F;
+        soundEffects[7].source.volume = .3F;
     }
 
     void Start()
@@ -63,10 +63,10 @@ public class Sound_Effects : MonoBehaviour
         }
 
         // Start Gliding
-        if (Input.GetKeyDown(KeyCode.W) && !(player.GetComponent<PlayerRigidbodyController2Dver2>().isGrounded)) soundEffects[1].source.Play();
+        if (Input.GetKeyDown(KeyCode.W) && !(player.GetComponent<PlayerRigidbodyController2Dver2>().isGrounded) && !(player.GetComponent<PlayerRigidbodyController2Dver2>().inIre)) soundEffects[1].source.Play();
 
         // Gliding
-        if ((Input.GetKey(KeyCode.W)) && !(player.GetComponent<PlayerRigidbodyController2Dver2>().isGrounded))
+        if ((Input.GetKey(KeyCode.W)) && !(player.GetComponent<PlayerRigidbodyController2Dver2>().isGrounded) && !(player.GetComponent<PlayerRigidbodyController2Dver2>().inIre))
         {
             soundEffects[2].source.volume = 1;
 
@@ -77,7 +77,7 @@ public class Sound_Effects : MonoBehaviour
         }
 
         //Glide end
-        if (Input.GetKeyUp(KeyCode.W) && !(player.GetComponent<PlayerRigidbodyController2Dver2>().isGrounded)) soundEffects[3].source.Play();
+        if (Input.GetKeyUp(KeyCode.W) && !(player.GetComponent<PlayerRigidbodyController2Dver2>().isGrounded) && !(player.GetComponent<PlayerRigidbodyController2Dver2>().inIre)) soundEffects[3].source.Play();
 
         //Jumping
         if (Input.GetKeyDown(KeyCode.Space) && player.GetComponent<PlayerRigidbodyController2Dver2>().isGrounded)

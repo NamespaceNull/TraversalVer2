@@ -2,6 +2,8 @@
 using UnityEngine.Audio;
 using System;
 using UnityEngine;
+using System.Collections.Generic;
+using System.Collections;
 
 
 
@@ -11,6 +13,8 @@ public class Music_Listener : MonoBehaviour
     public const int ANXIETY = 1;
     public const int DESTRUCTION = 2;
     public const int MASTERY = 3;
+    public const int FINALE = 36;
+
 
     // Creat ArrayList of each of the 4 tracks
     public Sound[] sounds;
@@ -20,6 +24,10 @@ public class Music_Listener : MonoBehaviour
     [HideInInspector]
     public int counter = 0;
     */
+
+    // end of game is finale bool
+    int finaleCount;
+    //int timer;
 
     // Code will run when the game is started
     void Awake()
@@ -38,6 +46,8 @@ public class Music_Listener : MonoBehaviour
         }
         // All of the volumes are currently set to 0 and isolation needs to play in the beginning
         sounds[0].source.volume = .1f;
+       // sounds[4].source.loop = false;
+        //sounds[5].source.loop = false;
 
        
     }
@@ -57,16 +67,17 @@ public class Music_Listener : MonoBehaviour
     // Code will run every frame
     void Update()
     {
-        
-         // Dictates what music is playing based on the y level of the camera
-         if (transform.position.y >= ANXIETY) sounds[1].source.volume = .1f;
-         if (transform.position.y >= DESTRUCTION) sounds[2].source.volume = .1f;
-         if (transform.position.y >= MASTERY) sounds[3].source.volume = .1f;
+        if (finaleCount <= 5)
+        {
+            // Dictates what music is playing based on the y level of the camera
+            if (transform.position.y >= ANXIETY) sounds[1].source.volume = .1f;
+            if (transform.position.y >= DESTRUCTION) sounds[2].source.volume = .1f;
+            if (transform.position.y >= MASTERY) sounds[3].source.volume = .1f;
 
-         if (transform.position.y < ANXIETY) sounds[1].source.volume = 0;
-         if (transform.position.y < DESTRUCTION) sounds[2].source.volume = 0;
-         if (transform.position.y < MASTERY) sounds[3].source.volume = 0;
-        
+            if (transform.position.y < ANXIETY) sounds[1].source.volume = 0;
+            if (transform.position.y < DESTRUCTION) sounds[2].source.volume = 0;
+            if (transform.position.y < MASTERY) sounds[3].source.volume = 0;
+        }
 
         /*
         // Testing feature to change sounds with W and S
@@ -82,6 +93,30 @@ public class Music_Listener : MonoBehaviour
         if (counter < MASTERY) sounds[3].source.volume = 0;
         */
 
+        if (transform.position.x >= (FINALE - 1) && transform.position.x <= (FINALE + 1)) finaleCount++;
+
+
+        if (finaleCount >= 5)
+        {
+            StartCoroutine("volumeFade");
+            //timer = 0;
+            //timer++;
+            //if (timer >= 100) sounds[4].source.Play();
+
+        }
+    }
+
+    public IEnumerator volumeFade()
+    {
+        for (int i = 0; i < 100000; i++)
+        {
+            sounds[0].source.volume -= .000001f;
+            sounds[1].source.volume -= .000001f;
+            sounds[2].source.volume -= .000001f;
+            sounds[3].source.volume -= .000001f;
+
+            yield return null;
+        }
     }
     
 }

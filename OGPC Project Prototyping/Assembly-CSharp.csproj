@@ -84,6 +84,7 @@
      <Compile Include="Assets\Scripts\Sector 3 Mechanics\Spring.cs" />
      <Compile Include="Assets\Scripts\Sector 3 Mechanics\spring2D.cs" />
      <Compile Include="Assets\Scripts\Sound\Collison_Sound.cs" />
+     <Compile Include="Assets\Scripts\Sound\IreJump.cs" />
      <Compile Include="Assets\Scripts\Sound\Lumen.cs" />
      <Compile Include="Assets\Scripts\Sound\Music_Listener.cs" />
      <Compile Include="Assets\Scripts\Sound\Sound.cs" />
