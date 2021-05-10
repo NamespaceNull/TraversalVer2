@@ -26,7 +26,6 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
     // wall stick variables \\
     public bool isStick = false;
     public float wallJumpForce = 15f;
-    public int contactQuantity = 0;
     public string previousStuckWall = "";
 
 
@@ -92,51 +91,53 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
         }
     }
 
+    // if the player's rotation changes, set it back to 0 \\
+    void LateUpdate() {
+        if (rb.rotation != 0) {
+            rb.rotation = 0;
+        }
+    }
+
     // if the player stays on the ground for some time, let them jump again \\
     void OnCollisionEnter2D(Collision2D hit) {
-        // shoot raycasts to the right, left, and down to check for collisions \\
-        RaycastHit2D[] hitsRight = Physics2D.RaycastAll(transform.position, Vector2.right, 5);
-        RaycastHit2D[] hitsLeft = Physics2D.RaycastAll(transform.position, Vector2.left, 5);
-        RaycastHit2D[] hitsDown = Physics2D.RaycastAll(transform.position, Vector2.down, 2);
+        Debug.Log(hit.contacts[0].point);
+        Debug.Log(transform.position);
+        Debug.Log("");
 
         // if the player touches the ground \\
-        if (hitsDown.Length > 1) {
-            if (hitsDown[1].collider.gameObject.tag == "Ground") {
-                isGrounded = true;
-                isGliding = false;
-                previousStuckWall = "";
+        if (hit.contacts[0].point.y < transform.position.y) {
+            isGrounded = true;
+            isGliding = false;
+            previousStuckWall = "";
+        }
+        // if the player touches the wall \\
+        if (Input.GetKey(KeyCode.W)) {
+            // Left wall \\
+            if (hit.contacts[0].point.x < transform.position.x) {
+                if (previousStuckWall == "Right" || previousStuckWall == "") {
+                    previousStuckWall = "Left";
+                    rb.constraints = RigidbodyConstraints2D.FreezePosition;
+                    isGrounded = false;
+                    isStick = true;    
+                }
+            }
+            // Right Wall \\
+            else if (hit.contacts[0].point.x > transform.position.x) {
+                if (previousStuckWall == "Left" || previousStuckWall == "") {
+                    previousStuckWall = "Right";
+                    rb.constraints = RigidbodyConstraints2D.FreezePosition;
+                    isGrounded = false;
+                    isStick = true;                 
+                }
             }
         }
-        // if the player touches a wall \\
-        else {
-            // if the player touches a wall to their right \\
-            if (hitsRight.Length > 1) {
-                if (hitsRight[1].collider.gameObject.tag == "Ground") {
-                    // if the player previously stuck to a left-sided wall, let them stick to the right-sided wall
-                    if (previousStuckWall == "Left" || previousStuckWall == "") {
-                        if (Input.GetKey(KeyCode.W)) {
-                            rb.constraints = RigidbodyConstraints2D.FreezePosition;
-                            isGrounded = false;
-                            isStick = true;
-                            previousStuckWall = "Right";
-                        }
-                    }
-                }          
-            }
-            // if the player touches a wall to their left \\
-            if (hitsLeft.Length > 1) {
-                if (hitsLeft[1].collider.gameObject.tag == "Ground") {
-                    // if the player previously stuck to a right-sided wall, let them stick to the left-sided wall
-                    if (previousStuckWall == "Right" || previousStuckWall == "") {
-                        if (Input.GetKey(KeyCode.W)) {
-                            rb.constraints = RigidbodyConstraints2D.FreezePosition;
-                            isGrounded = false;
-                            isStick = true;
-                            previousStuckWall = "Left";
-                        }
-                    }
-                } 
-            }
+    }
+
+    // making sure that if the player is on the ground, that isGrounded is true
+    void OnCollisionStay2D(Collision2D hit) {
+        if (hit.contacts[0].point.y < transform.position.y && hit.contacts[0].point.x == transform.position.x) {
+            isGrounded = true;
+            isGliding = false;
         }
     }
 
