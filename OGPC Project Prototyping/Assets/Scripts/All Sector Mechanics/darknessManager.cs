@@ -18,6 +18,7 @@ public class darknessManager : MonoBehaviour
         previousEnvironmentalColor = environmentalColor;
     }
 
+    /*
     // Update is called once per frame
     void Update()
     {
@@ -30,6 +31,7 @@ public class darknessManager : MonoBehaviour
         }
         
     }
+    */
 
     // changes the setting to dark to allow lumen to work \\
     public IEnumerator fadeToDark() {

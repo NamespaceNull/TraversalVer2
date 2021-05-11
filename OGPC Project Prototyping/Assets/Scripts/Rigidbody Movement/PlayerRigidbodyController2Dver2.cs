@@ -28,6 +28,7 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
     public bool isStick = false;
     public float wallJumpForce = 15f;
     public string previousStuckWall = "";
+    public GameObject mainCamera;
 
 
     // getting necessary variables at the start of the program \\
@@ -47,8 +48,8 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
             rb.velocity = new Vector2(mH * speed, rb.velocity.y);
         }
 
-        // player jump 
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded) {
+        // player jump
+        if (mainCamera.GetComponent<PlayerInput>().GetJumpKey() && isGrounded) {
             //rb.AddForce
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
             isGrounded = false;
@@ -59,8 +60,8 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
         }
 
         // gliding mechanic \\
-        // checking if the player can glide
-        if (Input.GetKey(KeyCode.W) && !isGrounded) {
+        // checking if the player can glide=
+        if (mainCamera.GetComponent<PlayerInput>().GetGlidingKey() && !isGrounded) {
             isGliding = true;
         }
         else {
@@ -78,14 +79,14 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
 
         // player wall stick and jump mechanic \\
         if (isStick) {
-            if (Input.GetKeyDown(KeyCode.Space)) {
+            if (mainCamera.GetComponent<PlayerInput>().GetJumpKey()) {
                 // make the player wall jump and un-stick them from the wall
                 rb.AddForce(jump * wallJumpForce, ForceMode2D.Impulse);
                 isStick = false;
             }
         }
-        // if the player lets go of the 'W' key or isStick is false for some reason, reset isStick and useGravity
-        if (Input.GetKeyUp(KeyCode.W) || isStick == false) {
+        // if the player lets go of the 'W' key or isStick is false for some reason, reset isStick and useGravity (still works)
+        if (mainCamera.GetComponent<PlayerInput>().GetGlidingUp() || isStick == false) {
             isStick = false;
             rb.constraints = RigidbodyConstraints2D.None;
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -108,7 +109,7 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
             previousStuckWall = "";
         }
         // if the player touches the wall \\
-        if (Input.GetKey(KeyCode.W) && !sleek2D.inSleek) {
+        if (mainCamera.GetComponent<PlayerInput>().GetGlidingKey() && !sleek2D.inSleek) {
             Debug.Log("h");
             // Left wall \\
             if (hit.contacts[0].point.x < transform.position.x) {

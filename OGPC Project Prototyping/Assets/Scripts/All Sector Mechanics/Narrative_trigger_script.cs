@@ -59,38 +59,32 @@ public class Narrative_trigger_script : MonoBehaviour
             {
                 fromTheLeft = true;
                 enter = true;
-                Debug.Log("fromLeft");
             }
             else if (vel.x < 0)
             {
                 fromTheRight = true;
                 enter = true;
-                Debug.Log("from right");
 
             }
 
             if (enter)
             {
-                Debug.Log("enter = true " + vel.ToString());
                 // Set text
                 if (fromTheLeft)
                 {
                     if (fromAbove)
                     {
-                        Debug.Log("LA");
                         TextMeshPro componentTMP = GetComponent<TextMeshPro>();
                         componentTMP.SetText(topLeft);
 
                     }
                     else if (fromBelow)
                     {
-                        Debug.Log("LB");
                         TextMeshPro componentTMP = GetComponent<TextMeshPro>();
                         componentTMP.SetText(bottomLeft);
                     }
                     else
                     {
-                        Debug.Log("L");
                         TextMeshPro componentTMP = GetComponent<TextMeshPro>();
                         componentTMP.SetText(left);
                     }
@@ -99,32 +93,27 @@ public class Narrative_trigger_script : MonoBehaviour
                 {
                     if (fromAbove)
                     {
-                        Debug.Log("RA");
                         TextMeshPro componentTMP = GetComponent<TextMeshPro>();
                         componentTMP.SetText(topRight);
                     }
                     else if (fromBelow)
                     {
-                        Debug.Log("RB");
                         TextMeshPro componentTMP = GetComponent<TextMeshPro>();
                         componentTMP.SetText(bottomRight);
                     }
                     else
                     {
-                        Debug.Log("R");
                         TextMeshPro componentTMP = GetComponent<TextMeshPro>();
                         componentTMP.SetText(right);
                     }
                 }
                 else if (fromAbove)
                 {
-                    Debug.Log("A");
                     TextMeshPro componentTMP = GetComponent<TextMeshPro>();
                     componentTMP.SetText(top);
                 }
                 else if (fromBelow)
                 {
-                    Debug.Log("B");
                     TextMeshPro componentTMP = GetComponent<TextMeshPro>();
                     componentTMP.SetText(bottom);
                 }
