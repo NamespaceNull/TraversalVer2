@@ -1,6 +1,8 @@
 ﻿using UnityEngine.Audio;
 using System;
 using UnityEngine;
+using System.Collections.Generic;
+using System.Collections;
 
 public class Sound_Effects : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class Sound_Effects : MonoBehaviour
     // 5 is Jump 2, 6 is Jump 3, 7 is Jump 4
     public Sound[] soundEffects;
     private GameObject player;
+    int finaleCount;
+    bool timerStarter;
 
     // Code will run when the game is started
     void Awake()
@@ -27,10 +31,8 @@ public class Sound_Effects : MonoBehaviour
             s.source.playOnAwake = true;
         }
         // footstps
-        soundEffects[0].source.volume = 0;
         soundEffects[0].source.loop = true;
         // gliding
-        soundEffects[2].source.volume = 0;
         soundEffects[2].source.loop = true;
         // Glide End
         soundEffects[3].source.volume = .3F; // this is a Zach edit, needed this for my sanity it was 0.5f before
@@ -39,6 +41,7 @@ public class Sound_Effects : MonoBehaviour
         soundEffects[5].source.volume = .3F;
         soundEffects[6].source.volume = .3F;
         soundEffects[7].source.volume = .3F;
+
     }
 
     void Start()
@@ -46,47 +49,76 @@ public class Sound_Effects : MonoBehaviour
         player = GameObject.Find("Player");
         soundEffects[0].source.Play();
         soundEffects[2].source.Play();
+
+        timerStarter = true;
     }
 
     void Update()
     {
+        finaleCount = GetComponent<Music_Listener>().finaleCount;
         // Footsteps
         // Replace true with !(conditional for when gliding)
-        if ((Mathf.Abs(player.GetComponent<PlayerRigidbodyController2Dver2>().rb.velocity.x) > 0) && player.GetComponent<PlayerRigidbodyController2Dver2>().isGrounded)
-        {
-            soundEffects[0].source.volume = 1;
+       // if (finaleCount <= 5)
+       // { 
+            if ((Mathf.Abs(player.GetComponent<PlayerRigidbodyController2Dver2>().rb.velocity.x) > 0) && player.GetComponent<PlayerRigidbodyController2Dver2>().isGrounded)
+            {
+                soundEffects[0].source.mute = false;
 
-        } else
-        {
-            soundEffects[0].source.volume = 0;
+            } else
+            {
+                soundEffects[0].source.mute = true;
+
+            }
+
+            // Start Gliding
+            if (Input.GetKeyDown(KeyCode.W) && !(player.GetComponent<PlayerRigidbodyController2Dver2>().isGrounded) && !(player.GetComponent<PlayerRigidbodyController2Dver2>().inIre)) soundEffects[1].source.Play();
+
+            // Gliding
+            if ((Input.GetKey(KeyCode.W)) && !(player.GetComponent<PlayerRigidbodyController2Dver2>().isGrounded) && !(player.GetComponent<PlayerRigidbodyController2Dver2>().inIre))
+            {
+                soundEffects[2].source.mute = false;
 
         }
-
-        // Start Gliding
-        if (Input.GetKeyDown(KeyCode.W) && !(player.GetComponent<PlayerRigidbodyController2Dver2>().isGrounded) && !(player.GetComponent<PlayerRigidbodyController2Dver2>().inIre)) soundEffects[1].source.Play();
-
-        // Gliding
-        if ((Input.GetKey(KeyCode.W)) && !(player.GetComponent<PlayerRigidbodyController2Dver2>().isGrounded) && !(player.GetComponent<PlayerRigidbodyController2Dver2>().inIre))
-        {
-            soundEffects[2].source.volume = 1;
-
-        }
-        else
-        {
-            soundEffects[2].source.volume = 0;
+            else
+            {
+                soundEffects[2].source.mute = true;
         }
 
-        //Glide end
-        if (Input.GetKeyUp(KeyCode.W) && !(player.GetComponent<PlayerRigidbodyController2Dver2>().isGrounded) && !(player.GetComponent<PlayerRigidbodyController2Dver2>().inIre)) soundEffects[3].source.Play();
+            //Glide end
+            if (Input.GetKeyUp(KeyCode.W) && !(player.GetComponent<PlayerRigidbodyController2Dver2>().isGrounded) && !(player.GetComponent<PlayerRigidbodyController2Dver2>().inIre)) soundEffects[3].source.Play();
 
-        //Jumping
-        if (Input.GetKeyDown(KeyCode.Space) && player.GetComponent<PlayerRigidbodyController2Dver2>().isGrounded)
-        {
-            int i = UnityEngine.Random.Range(4, 8);
-            soundEffects[i].source.Play();
+            //Jumping
+            if (Input.GetKeyDown(KeyCode.Space) && player.GetComponent<PlayerRigidbodyController2Dver2>().isGrounded)
+            {
+                int i = UnityEngine.Random.Range(4, 8);
+                soundEffects[i].source.Play();
             
+            }
+      //  }
+        if (finaleCount >= 5 && timerStarter)
+        {
+            StartCoroutine("volumeFade");
+
+            timerStarter = false;
         }
 
 
+    }
+
+    public IEnumerator volumeFade()
+    {
+        for (int i = 0; i < 10000; i++)
+        {
+            soundEffects[0].source.volume -= .005f;
+            soundEffects[1].source.volume -= .005f;
+            soundEffects[2].source.volume -= .005f;
+            soundEffects[3].source.volume -= .005f;
+            soundEffects[4].source.volume -= .003f;
+            soundEffects[5].source.volume -= .003f;
+            soundEffects[6].source.volume -= .003f;
+            soundEffects[7].source.volume -= .003f;
+
+            yield return null;
+        }
     }
 }

@@ -26,7 +26,8 @@ public class Music_Listener : MonoBehaviour
     */
 
     // end of game is finale bool
-    int finaleCount;
+    [HideInInspector]
+    public int finaleCount;
 
     //Timer for end chord prog
     float timer;
@@ -42,7 +43,7 @@ public class Music_Listener : MonoBehaviour
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
-            s.source.volume = s.volume;
+            s.source.volume = .1f;
             s.source.pitch = 1;
             s.source.loop = true;
             s.source.playOnAwake = true;
@@ -50,7 +51,6 @@ public class Music_Listener : MonoBehaviour
 
         }
         // All of the volumes are currently set to 0 and isolation needs to play in the beginning
-        sounds[0].source.volume = .1f;
 
         // end sounds need to be non-looped and have volume
         sounds[4].source.loop = false;
@@ -80,17 +80,17 @@ public class Music_Listener : MonoBehaviour
     // Code will run every frame
     void Update()
     {
-        if (finaleCount <= 5)
-        {
-            // Dictates what music is playing based on the y level of the camera
-            if (transform.position.y >= ANXIETY) sounds[1].source.volume = .1f;
-            if (transform.position.y >= DESTRUCTION) sounds[2].source.volume = .1f;
-            if (transform.position.y >= MASTERY) sounds[3].source.volume = .1f;
 
-            if (transform.position.y < ANXIETY) sounds[1].source.volume = 0;
-            if (transform.position.y < DESTRUCTION) sounds[2].source.volume = 0;
-            if (transform.position.y < MASTERY) sounds[3].source.volume = 0;
-        }
+
+        // Dictates what music is playing based on the y level of the camera
+        if (transform.position.y >= ANXIETY) sounds[1].source.mute = false;
+        if (transform.position.y >= DESTRUCTION) sounds[2].source.mute = false;
+        if (transform.position.y >= MASTERY) sounds[3].source.mute = false;
+
+        if (transform.position.y < ANXIETY) sounds[1].source.mute = true;
+        if (transform.position.y < DESTRUCTION) sounds[2].source.mute = true;
+        if (transform.position.y < MASTERY) sounds[3].source.mute = true;
+
 
         /*
         // Testing feature to change sounds with W and S
@@ -116,12 +116,12 @@ public class Music_Listener : MonoBehaviour
             timerStarter = false;
         }
 
-        if (finaleCount >= 5 && chordProg && timer + 15 <= Time.realtimeSinceStartup)
+        if (finaleCount >= 5 && chordProg && timer + 13 <= Time.realtimeSinceStartup)
         {
             sounds[4].source.Play();
             chordProg = false;
         } 
-        if (finaleCount >= 5 && chordProgEnd && timer + 39 <= Time.realtimeSinceStartup)
+        if (finaleCount >= 5 && chordProgEnd && timer + 36 <= Time.realtimeSinceStartup)
         {
             sounds[5].source.Play();
             chordProgEnd = false;
