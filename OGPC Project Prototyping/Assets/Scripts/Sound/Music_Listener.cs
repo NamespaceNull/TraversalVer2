@@ -27,7 +27,12 @@ public class Music_Listener : MonoBehaviour
 
     // end of game is finale bool
     int finaleCount;
-    //int timer;
+
+    //Timer for end chord prog
+    float timer;
+    bool timerStarter;
+    bool chordProg;
+    bool chordProgEnd;
 
     // Code will run when the game is started
     void Awake()
@@ -46,8 +51,16 @@ public class Music_Listener : MonoBehaviour
         }
         // All of the volumes are currently set to 0 and isolation needs to play in the beginning
         sounds[0].source.volume = .1f;
-       // sounds[4].source.loop = false;
-        //sounds[5].source.loop = false;
+
+        // end sounds need to be non-looped and have volume
+        sounds[4].source.loop = false;
+        sounds[4].source.volume = 1;
+        sounds[5].source.loop = false;
+        sounds[5].source.volume = 1;
+
+        timerStarter = true;
+        chordProg = true;
+        chordProgEnd = true;
 
        
     }
@@ -95,25 +108,34 @@ public class Music_Listener : MonoBehaviour
 
         if (transform.position.x >= (FINALE - 1) && transform.position.x <= (FINALE + 1)) finaleCount++;
 
-
-        if (finaleCount >= 5)
+        if (finaleCount >= 5 && timerStarter)
         {
             StartCoroutine("volumeFade");
-            //timer = 0;
-            //timer++;
-            //if (timer >= 100) sounds[4].source.Play();
+            timer = Time.realtimeSinceStartup;
+            
+            timerStarter = false;
+        }
 
+        if (finaleCount >= 5 && chordProg && timer + 15 <= Time.realtimeSinceStartup)
+        {
+            sounds[4].source.Play();
+            chordProg = false;
+        } 
+        if (finaleCount >= 5 && chordProgEnd && timer + 39 <= Time.realtimeSinceStartup)
+        {
+            sounds[5].source.Play();
+            chordProgEnd = false;
         }
     }
 
     public IEnumerator volumeFade()
     {
-        for (int i = 0; i < 100000; i++)
+        for (int i = 0; i < 10000; i++)
         {
-            sounds[0].source.volume -= .000001f;
-            sounds[1].source.volume -= .000001f;
-            sounds[2].source.volume -= .000001f;
-            sounds[3].source.volume -= .000001f;
+            sounds[0].source.volume -= .0001f;
+            sounds[1].source.volume -= .0001f;
+            sounds[2].source.volume -= .0001f;
+            sounds[3].source.volume -= .0001f;
 
             yield return null;
         }
