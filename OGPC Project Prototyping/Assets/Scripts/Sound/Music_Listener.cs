@@ -106,6 +106,7 @@ public class Music_Listener : MonoBehaviour
         if (counter < MASTERY) sounds[3].source.volume = 0;
         */
 
+        /* // TEMORARILY COMMENTED OUT
         if (transform.position.x >= (FINALE - 1) && transform.position.x <= (FINALE + 1)) finaleCount++;
 
         if (finaleCount >= 5 && timerStarter)
@@ -126,6 +127,7 @@ public class Music_Listener : MonoBehaviour
             sounds[5].source.Play();
             chordProgEnd = false;
         }
+        */
     }
 
     public IEnumerator volumeFade()
