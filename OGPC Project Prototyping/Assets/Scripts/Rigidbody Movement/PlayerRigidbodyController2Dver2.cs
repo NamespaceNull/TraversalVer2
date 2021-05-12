@@ -80,64 +80,60 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
         // player wall stick and jump mechanic \\
         if (isStick) {
             if (mainCamera.GetComponent<PlayerInput>().GetJumpKey()) {
+                rb.constraints = RigidbodyConstraints2D.FreezeRotation;
                 // make the player wall jump and un-stick them from the wall
                 rb.AddForce(jump * wallJumpForce, ForceMode2D.Impulse);
                 isStick = false;
             }
         }
-        // if the player lets go of the 'W' key or isStick is false for some reason, reset isStick and useGravity (still works)
-        if (mainCamera.GetComponent<PlayerInput>().GetGlidingUp() || isStick == false) {
+        // if the player lets go of the 'W' key 
+        if (mainCamera.GetComponent<PlayerInput>().GetGlidingUp()) {
             isStick = false;
-            rb.constraints = RigidbodyConstraints2D.None;
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
     }
 
-    // if the player's rotation changes, set it back to 0 \\
-    void LateUpdate() {
-        if (rb.rotation != 0) {
-            rb.rotation = 0;
-        }
-    }
-
-    // if the player stays on the ground for some time, let them jump again \\
+    // ground and wall collision with the player \\
     void OnCollisionEnter2D(Collision2D hit) {
         // if the player touches the ground \\
-        if (hit.contacts[0].point.y < transform.position.y) {
+        if (hit.contacts[0].point.y < transform.position.y && hit.contacts.Length == 1) {
             isGrounded = true;
             isGliding = false;
             previousStuckWall = "";
         }
         // if the player touches the wall \\
         if (mainCamera.GetComponent<PlayerInput>().GetGlidingKey() && !sleek2D.inSleek) {
-            Debug.Log("h");
-            // Left wall \\
-            if (hit.contacts[0].point.x < transform.position.x) {
-                if (previousStuckWall == "Right" || previousStuckWall == "") {
-                    previousStuckWall = "Left";
-                    rb.constraints = RigidbodyConstraints2D.FreezePosition;
-                    isGrounded = false;
-                    isStick = true;    
+            if (hit.contacts.Length > 1) {
+                // Left wall \\
+                if (hit.contacts[0].point.x < transform.position.x) {
+                    if (previousStuckWall == "Right" || previousStuckWall == "") {
+                        previousStuckWall = "Left";
+                        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+                        isGrounded = false;
+                        isStick = true;    
+                    }
                 }
-            }
-            // Right Wall \\
-            else if (hit.contacts[0].point.x > transform.position.x) {
-                if (previousStuckWall == "Left" || previousStuckWall == "") {
-                    previousStuckWall = "Right";
-                    rb.constraints = RigidbodyConstraints2D.FreezePosition;
-                    isGrounded = false;
-                    isStick = true;                 
+                // Right Wall \\
+                else if (hit.contacts[0].point.x > transform.position.x) {
+                    if (previousStuckWall == "Left" || previousStuckWall == "") {
+                        previousStuckWall = "Right";
+                        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+                        isGrounded = false;
+                        isStick = true;                 
+                    }
                 }
             }
         }
+        rb.rotation = 0;
     }
 
     // making sure that if the player is on the ground, that isGrounded is true
     void OnCollisionStay2D(Collision2D hit) {
-        if (hit.contacts[0].point.y < transform.position.y && hit.contacts[0].point.x == transform.position.x) {
+        if (hit.contacts[0].point.y < transform.position.y) {
             isGrounded = true;
             isGliding = false;
         }
+        rb.rotation = 0;
     }
 
     // making sure isGrounded is false when the player is in the air \\
@@ -146,6 +142,7 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
             isGrounded = false;
             isStick = false;
         }
+        rb.rotation = 0;
     }
 
     // on trigger stuff that checks if the player is in goop
