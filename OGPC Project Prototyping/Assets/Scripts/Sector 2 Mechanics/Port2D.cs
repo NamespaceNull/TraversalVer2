@@ -10,7 +10,7 @@ public class Port2D : MonoBehaviour
     private MeshRenderer rend;
     public int minDis = 2; // make sure that minDis is the objects x.Scale + 1
     // if true, the port allows entry to the right. false, the port allows entry to the left
-    public bool allowEntry = true;
+    public bool allowEntryRight = true;
 
     void Start() {
         rend = GetComponent<MeshRenderer>();
@@ -20,7 +20,7 @@ public class Port2D : MonoBehaviour
     void Update()
     {
         // if the port allows entry from the right \\
-        if (allowEntry) {
+        if (allowEntryRight) {
             // if the player is to the right, turn off collision \\
             if (player.transform.position.x > gameObject.transform.position.x) {
                 rend.material = openMat;
