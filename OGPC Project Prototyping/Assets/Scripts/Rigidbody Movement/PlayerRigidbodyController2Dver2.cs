@@ -129,11 +129,10 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
 
     // making sure that if the player is on the ground, that isGrounded is true
     void OnCollisionStay2D(Collision2D hit) {
-        if (hit.contacts[0].point.y < transform.position.y) {
+        if (hit.contacts[0].point.y < transform.position.y && hit.contacts[0].point.x == transform.position.x) {
             isGrounded = true;
             isGliding = false;
         }
-        rb.rotation = 0;
     }
 
     // making sure isGrounded is false when the player is in the air \\
@@ -142,7 +141,6 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
             isGrounded = false;
             isStick = false;
         }
-        rb.rotation = 0;
     }
 
     // on trigger stuff that checks if the player is in goop
