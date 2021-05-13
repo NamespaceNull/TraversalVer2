@@ -19,17 +19,15 @@ public class LumenLight : MonoBehaviour
     // once gotten the distance, change the intensity of the light depending on the distance
     void Update()
     {
-        if (!darknessTrigger2D.dark) {
-            // get the distance
-            float distance = Vector3.Distance(gameObject.transform.position, player.transform.position);
+        // get the distance 
+        float distance = Vector3.Distance(gameObject.transform.position, player.transform.position);
 
-            // change the intensity
-            if (distance < distanceBeforeLight) {
-                lightThing.intensity = intensityAmount - distance;
-            }
-            else {
-                lightThing.intensity = 0f;
-            }
+        // change the intensity
+        if (distance < distanceBeforeLight) {
+            lightThing.intensity = intensityAmount - distance;
+        }
+        else {
+            lightThing.intensity = 0f;
         }
     }
 }

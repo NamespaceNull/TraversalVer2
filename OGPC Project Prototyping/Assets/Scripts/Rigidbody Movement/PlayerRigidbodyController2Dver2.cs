@@ -129,7 +129,7 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
 
     // making sure that if the player is on the ground, that isGrounded is true
     void OnCollisionStay2D(Collision2D hit) {
-        if (hit.contacts[0].point.y < transform.position.y && hit.contacts[0].point.x == transform.position.x) {
+        if (hit.contacts[0].point.y < transform.position.y && hit.contacts.Length == 1) {
             isGrounded = true;
             isGliding = false;
         }
