@@ -47,7 +47,7 @@ public class Music_Listener : MonoBehaviour
             s.source.pitch = 1;
             s.source.loop = true;
             s.source.playOnAwake = true;
-            
+
 
         }
         // All of the volumes are currently set to 0 and isolation needs to play in the beginning
@@ -62,17 +62,21 @@ public class Music_Listener : MonoBehaviour
         chordProg = true;
         chordProgEnd = true;
 
-       
+        sounds[0].source.Play();
+        sounds[1].source.Play();
+        sounds[2].source.Play();
+        sounds[3].source.Play();
+
     }
 
     // Code will run when this object is created
     void Start()
     {
-        // All of the tracks will play, but only Isolation has Volume at this point
-        sounds[0].source.Play();
-        sounds[1].source.Play();
-        sounds[2].source.Play();
-        sounds[3].source.Play();
+        // All of the tracks will play at once, only sounds[0] is unmuted
+
+        
+        
+
 
 
     }
@@ -106,14 +110,14 @@ public class Music_Listener : MonoBehaviour
         if (counter < MASTERY) sounds[3].source.volume = 0;
         */
 
-        /* // TEMORARILY COMMENTED OUT
+
         if (transform.position.x >= (FINALE - 1) && transform.position.x <= (FINALE + 1)) finaleCount++;
 
         if (finaleCount >= 5 && timerStarter)
         {
             StartCoroutine("volumeFade");
             timer = Time.realtimeSinceStartup;
-            
+
             timerStarter = false;
         }
 
@@ -121,13 +125,13 @@ public class Music_Listener : MonoBehaviour
         {
             sounds[4].source.Play();
             chordProg = false;
-        } 
+        }
         if (finaleCount >= 5 && chordProgEnd && timer + 36 <= Time.realtimeSinceStartup)
         {
             sounds[5].source.Play();
             chordProgEnd = false;
         }
-        */
+
     }
 
     public IEnumerator volumeFade()
@@ -142,5 +146,5 @@ public class Music_Listener : MonoBehaviour
             yield return null;
         }
     }
-    
+
 }
