@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class spring2D : MonoBehaviour
 {
+    // changeable spring force \\
     public float springForce = 2.25f;
+    // gameobject and component needed \\
     public GameObject player;
     private Rigidbody2D playerRB;
 
@@ -13,6 +15,7 @@ public class spring2D : MonoBehaviour
         playerRB = player.GetComponent<Rigidbody2D>();
     }
 
+    // spring collision with the player \\
     void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag == "Player") {
             // get the player's velocity \\

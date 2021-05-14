@@ -14,6 +14,7 @@ public class Port2D : MonoBehaviour
     public bool horizontalPort = false;
     public bool allowEntryTop = false;
 
+    // get the mesh renderer of the player \\
     void Start() {
         rend = GetComponent<MeshRenderer>();
     }

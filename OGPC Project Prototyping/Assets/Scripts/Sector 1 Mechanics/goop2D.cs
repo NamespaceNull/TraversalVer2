@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class goop2D : MonoBehaviour
 {
-// the player's mass will be when interacting with the goop \\
+    // the player's mass will be when interacting with the goop \\
     public float massInGoop = 1.25f;
     // the liquid will still have an effect on the player after moveTimer miliseconds \\
     private GameObject player;

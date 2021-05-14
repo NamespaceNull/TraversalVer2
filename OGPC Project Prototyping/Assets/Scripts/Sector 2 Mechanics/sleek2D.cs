@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class sleek2D : MonoBehaviour
 {
+    // static bool for not allowing the player to interact with walls \\
     public static bool inSleek = false;
     // what the player's mass will be while in the sleek \\
     public float massInSleek = 0.75f;
