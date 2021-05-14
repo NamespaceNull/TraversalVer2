@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 786
+  controlID: 68
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 787
+  controlID: 69
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 55
+  controlID: 119
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -211,8 +211,8 @@ MonoBehaviour:
     y: 0
     width: 901
     height: 587
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -266,8 +266,8 @@ MonoBehaviour:
     y: 0
     width: 517
     height: 947
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -393,10 +393,10 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 80}
+      scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 16faffff
+      m_ExpandedIDs: 12f9ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -456,9 +456,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -50.954437, y: 254.87953, z: -14.109375}
+    m_Target: {x: -77.6128, y: 249.10002, z: -41.14287}
     speed: 2
-    m_Value: {x: -50.954437, y: 254.87953, z: -14.109375}
+    m_Value: {x: -77.6128, y: 249.10002, z: -41.14287}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -508,9 +508,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 86.993095
+    m_Target: 1.9727241
     speed: 2
-    m_Value: 83.24698
+    m_Value: 1.9727241
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -600,21 +600,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Sprites/Player
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Sprites/Player
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Admin\Desktop\Namespace Null\TraversalVer2\OGPC Project
-    Prototyping
+  m_LastProjectPath: D:\namespace null\TraversalVer2\OGPC Project Prototyping
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: e4440000
-    m_LastClickedID: 17636
-    m_ExpandedIDs: 00000000e4440000e6440000e8440000ea440000ec440000ee440000f0440000f244000000ca9a3b
+    scrollPos: {x: 0, y: 97}
+    m_SelectedIDs: 62460000
+    m_LastClickedID: 18018
+    m_ExpandedIDs: 00000000d0450000d2450000d4450000d6450000d8450000da450000dc450000de450000fe450000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -642,7 +641,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000e4440000e6440000e8440000ea440000ec440000ee440000f0440000f2440000
+    m_ExpandedIDs: 00000000d0450000d2450000d4450000d6450000d8450000da450000dc450000de450000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
