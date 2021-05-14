@@ -10,9 +10,9 @@ using System.Collections;
 public class Music_Listener : MonoBehaviour
 {
     // Establish constants for y levels of zones (NEEDS TO BE SET TO REAL VALUES)
-    public const int ANXIETY = 1;
-    public const int DESTRUCTION = 2;
-    public const int MASTERY = 3;
+    public const int ANXIETY = 126;
+    public const int DESTRUCTION = 180;
+    public const int MASTERY = 232;
     public const int FINALEX = 60;
     public const int FINALEY = 255;
 
@@ -94,7 +94,7 @@ public class Music_Listener : MonoBehaviour
         if (transform.position.y >= DESTRUCTION) sounds[2].source.mute = false;
         if (transform.position.y >= MASTERY) sounds[3].source.mute = false;
 
-        if (transform.position.y < ANXIETY) sounds[1].source.mute = true;
+        if (transform.position.y < ANXIETY-16) sounds[1].source.mute = true;
         if (transform.position.y < DESTRUCTION) sounds[2].source.mute = true;
         if (transform.position.y < MASTERY) sounds[3].source.mute = true;
 
