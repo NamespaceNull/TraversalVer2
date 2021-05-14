@@ -91,6 +91,10 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
             isStick = false;
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
+        // if the player moves right
+        if (rb.velocity.x > 0) GetComponent<SpriteRenderer>().flipX = false;
+        // if the player moves left
+        if (rb.velocity.x < 0) GetComponent<SpriteRenderer>().flipX = true;
     }
 
     // ground and wall collision with the player \\
