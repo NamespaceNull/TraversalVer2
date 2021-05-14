@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5750,7 +5750,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enter_Sound:
     name: 
-    clip: {fileID: 8300000, guid: 3b258f53f9dd2284bb6ed220ebf7e1c0, type: 3}
+    clip: {fileID: 8300000, guid: 059be98f0c5284348a06061c69be742d, type: 3}
     playOnAwake: 0
     volume: 0
     pitch: 0
@@ -11661,7 +11661,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enter_Sound:
     name: 
-    clip: {fileID: 8300000, guid: 3b258f53f9dd2284bb6ed220ebf7e1c0, type: 3}
+    clip: {fileID: 8300000, guid: 059be98f0c5284348a06061c69be742d, type: 3}
     playOnAwake: 0
     volume: 0
     pitch: 0
@@ -13708,7 +13708,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enter_Sound:
     name: 
-    clip: {fileID: 8300000, guid: 3b258f53f9dd2284bb6ed220ebf7e1c0, type: 3}
+    clip: {fileID: 8300000, guid: 059be98f0c5284348a06061c69be742d, type: 3}
     playOnAwake: 0
     volume: 0
     pitch: 0
@@ -21081,7 +21081,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enter_Sound:
     name: 
-    clip: {fileID: 8300000, guid: 3b258f53f9dd2284bb6ed220ebf7e1c0, type: 3}
+    clip: {fileID: 8300000, guid: 059be98f0c5284348a06061c69be742d, type: 3}
     playOnAwake: 0
     volume: 0
     pitch: 0
@@ -25040,7 +25040,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1859791348}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 63.4, y: 109.9, z: -2.09}
+  m_LocalPosition: {x: 80.6, y: 252.2, z: -2.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

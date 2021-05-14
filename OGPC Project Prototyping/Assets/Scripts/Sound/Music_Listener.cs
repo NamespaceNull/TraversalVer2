@@ -13,7 +13,8 @@ public class Music_Listener : MonoBehaviour
     public const int ANXIETY = 1;
     public const int DESTRUCTION = 2;
     public const int MASTERY = 3;
-    public const int FINALE = 36;
+    public const int FINALEX = 60;
+    public const int FINALEY = 255;
 
 
     // Creat ArrayList of each of the 4 tracks
@@ -57,6 +58,8 @@ public class Music_Listener : MonoBehaviour
         sounds[4].source.volume = 1;
         sounds[5].source.loop = false;
         sounds[5].source.volume = 1;
+
+        sounds[3].source.volume = .2f;
 
         timerStarter = true;
         chordProg = true;
@@ -111,7 +114,7 @@ public class Music_Listener : MonoBehaviour
         */
 
 
-        if (transform.position.x >= (FINALE - 1) && transform.position.x <= (FINALE + 1)) finaleCount++;
+        if (transform.position.x >= (FINALEX - 2) && transform.position.x <= (FINALEX + 2) && transform.position.y >= (FINALEY - 2) && transform.position.x <= (FINALEY + 2)) finaleCount++;
 
         if (finaleCount >= 5 && timerStarter)
         {
@@ -121,12 +124,12 @@ public class Music_Listener : MonoBehaviour
             timerStarter = false;
         }
 
-        if (finaleCount >= 5 && chordProg && timer + 13 <= Time.realtimeSinceStartup)
+        if (finaleCount >= 5 && chordProg && timer + 12 <= Time.realtimeSinceStartup)
         {
             sounds[4].source.Play();
             chordProg = false;
         }
-        if (finaleCount >= 5 && chordProgEnd && timer + 36 <= Time.realtimeSinceStartup)
+        if (finaleCount >= 5 && chordProgEnd && timer + 35 <= Time.realtimeSinceStartup)
         {
             sounds[5].source.Play();
             chordProgEnd = false;
