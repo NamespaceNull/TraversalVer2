@@ -23,6 +23,7 @@ public class Sound
     [HideInInspector]
     public bool playOnAwake;
 
+    [HideInInspector]
     [Range(0f, 1f)]
     public float volume;
 
