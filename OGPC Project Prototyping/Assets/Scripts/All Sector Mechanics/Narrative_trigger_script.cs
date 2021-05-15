@@ -7,7 +7,7 @@ public class Narrative_trigger_script : MonoBehaviour
 {
 
     // messages
-    bool dirIsX;
+    public bool dirIsX;
     public string posMessage; // for if values are up or right
     public string negMessage; // for if values are down or left
 
