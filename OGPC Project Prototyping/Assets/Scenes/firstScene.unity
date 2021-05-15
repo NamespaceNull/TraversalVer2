@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311926, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1457,20 +1457,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4a6e21397c0e354aba1dd2d802da016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fromAbove: 0
-  fromBelow: 0
-  fromTheLeft: 0
-  fromTheRight: 0
-  topLeft: 
-  topRight: 
-  bottomLeft: 
-  bottomRight: 
-  top: 
-  bottom: But you and I, we'll still stick together.
-  left: 
-  right: 
-  broken: 0
-  enter: 0
+  posMessage: 
+  negMessage: 
 --- !u!61 &102578308
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6652,20 +6640,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4a6e21397c0e354aba1dd2d802da016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fromAbove: 0
-  fromBelow: 0
-  fromTheLeft: 0
-  fromTheRight: 0
-  topLeft: 
-  topRight: 
-  bottomLeft: 
-  bottomRight: 
-  top: 
-  bottom: 
-  left: Come now young one, this is for the best.
-  right: 
-  broken: 0
-  enter: 0
+  posMessage: Come now young one, this is for the best
+  negMessage: 
 --- !u!61 &322063282
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9956,20 +9932,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4a6e21397c0e354aba1dd2d802da016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fromAbove: 0
-  fromBelow: 0
-  fromTheLeft: 0
-  fromTheRight: 0
-  topLeft: TopLeft Corner
-  topRight: TopRight Corner
-  bottomLeft: BottomLeft Corner
-  bottomRight: BottomRight Corner
-  top: Top
-  bottom: Bottom
-  left: Left
-  right: Right
-  broken: 0
-  enter: 0
+  posMessage: 
+  negMessage: 
 --- !u!61 &379877191
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10542,20 +10506,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4a6e21397c0e354aba1dd2d802da016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fromAbove: 0
-  fromBelow: 0
-  fromTheLeft: 0
-  fromTheRight: 0
-  topLeft: We cannot go back to them, but perhaps we can push past.
-  topRight: We cannot go back to them, but perhaps we can push past.
-  bottomLeft: We cannot go back to them, but perhaps we can push past.
-  bottomRight: We cannot go back to them, but perhaps we can push past.
-  top: 
-  bottom: 
-  left: 
-  right: 
-  broken: 0
-  enter: 0
+  posMessage: 
+  negMessage: 
 --- !u!61 &433895790
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16364,20 +16316,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4a6e21397c0e354aba1dd2d802da016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fromAbove: 0
-  fromBelow: 0
-  fromTheLeft: 0
-  fromTheRight: 0
-  topLeft: 
-  topRight: 
-  bottomLeft: 
-  bottomRight: 
-  top: 
-  bottom: 
-  left: At least choices are easy when you're at the bottom of the well.
-  right: 
-  broken: 0
-  enter: 0
+  posMessage: 
+  negMessage: 
 --- !u!61 &891342749
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17303,20 +17243,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4a6e21397c0e354aba1dd2d802da016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fromAbove: 0
-  fromBelow: 0
-  fromTheLeft: 0
-  fromTheRight: 0
-  topLeft: 
-  topRight: 
-  bottomLeft: 
-  bottomRight: 
-  top: 
-  bottom: 
-  left: 
-  right: 
-  broken: 0
-  enter: 0
+  posMessage: 
+  negMessage: 
 --- !u!61 &909320632
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19657,20 +19585,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4a6e21397c0e354aba1dd2d802da016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fromAbove: 0
-  fromBelow: 0
-  fromTheLeft: 0
-  fromTheRight: 0
-  topLeft: 
-  topRight: 
-  bottomLeft: 
-  bottomRight: 
-  top: You never were the best, were you...
-  bottom: 
-  left: 
-  right: 
-  broken: 0
-  enter: 0
+  posMessage: 
+  negMessage: 
 --- !u!61 &1003784035
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20525,7 +20441,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 4
@@ -25526,20 +25442,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4a6e21397c0e354aba1dd2d802da016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fromAbove: 0
-  fromBelow: 0
-  fromTheLeft: 0
-  fromTheRight: 0
-  topLeft: 
-  topRight: 
-  bottomLeft: 
-  bottomRight: 
-  top: 
-  bottom: 
-  left: Though down here they're always against us.
-  right: 
-  broken: 0
-  enter: 0
+  posMessage: 
+  negMessage: 
 --- !u!61 &1373400138
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28057,7 +27961,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 4
@@ -36939,20 +36843,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4a6e21397c0e354aba1dd2d802da016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fromAbove: 0
-  fromBelow: 0
-  fromTheLeft: 0
-  fromTheRight: 0
-  topLeft: 
-  topRight: 
-  bottomLeft: 
-  bottomRight: 
-  top: ...but this is something else entirely.
-  bottom: 
-  left: 
-  right: 
-  broken: 0
-  enter: 0
+  posMessage: 
+  negMessage: 
 --- !u!61 &1830423008
 BoxCollider2D:
   m_ObjectHideFlags: 0
