@@ -163,7 +163,6 @@ public class PlayerRigidbodyController2Dver2 : MonoBehaviour
             isGrounded = false;
         }
         if (col.gameObject.tag == "Narrative Trigger") {
-            Debug.Log("working");
             col.GetComponent<Narrative_trigger_script>().GetTriggerAction(rb.velocity);
         }
 	}

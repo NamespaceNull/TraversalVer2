@@ -20,6 +20,7 @@ public class SettingsManager : MonoBehaviour
     {
         timeSpeed = (Time.timeScale != 0) ? Time.timeScale : timeSpeed;
         settingsVis = vis;
+        SaveScript.opened = true;
 
         foreach (Transform child in transform)
         {
@@ -32,6 +33,11 @@ public class SettingsManager : MonoBehaviour
                 { obj.SetActive(true); }
                 else if (obj.CompareTag("UISituational"))
                 { obj.SetActive(false); }
+            }
+            if (obj.name == "Menu Background" && (vis == "closed"))
+            {
+                obj.SetActive(false); ;
+                Debug.Log("should work");
             }
         }
 
@@ -75,7 +81,7 @@ public class SettingsManager : MonoBehaviour
         return boolVis;
     }
     public string CreateStringVis(bool boolval)
-    //changes boolean input to "opened"/"closed". Cannot be used to create "partclosed".
+    //changes boolean input to "opened"/"closed". Cannot be used to create "partClosed".
     {
         return boolval ? "opened" : "closed";
     }
