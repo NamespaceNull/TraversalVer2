@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -20852,7 +20852,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 3.3456326, y: -1.5171566}
+  m_Offset: {x: -0.8302574, y: -1.141325}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -20863,7 +20863,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 23.115948, y: 8.150379}
+  m_Size: {x: 14.764168, y: 7.398716}
   m_EdgeRadius: 0
 --- !u!114 &925761821
 MonoBehaviour:
@@ -28026,7 +28026,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 3.610262, y: -0.1713829}
+  m_Offset: {x: -4.203144, y: 9.168846}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -28037,7 +28037,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 22.586689, y: 27.410973}
+  m_Size: {x: 3.367485, y: 8.730515}
   m_EdgeRadius: 0
 --- !u!114 &1247467712
 MonoBehaviour:
@@ -34475,7 +34475,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07947922, y: 1.5476243}
+  m_Offset: {x: -0.32222366, y: 4.7695484}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -34486,7 +34486,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 29.966171, y: 7.9791837}
+  m_Size: {x: 29.480682, y: 14.423031}
   m_EdgeRadius: 0
 --- !u!114 &1619609330
 MonoBehaviour:
@@ -39650,7 +39650,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1859791348}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -72.66, y: 249.59, z: -2.09}
+  m_LocalPosition: {x: -72.12, y: 249.62, z: -2.09}
   m_LocalScale: {x: 1.4991689, y: 1.4991689, z: 1.4991689}
   m_Children: []
   m_Father: {fileID: 0}
