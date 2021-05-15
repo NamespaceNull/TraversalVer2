@@ -20,7 +20,7 @@ public class logoScript : MonoBehaviour
     // every late update, check for the player collision with FadeOut script \\
     void LateUpdate() {
         // fade in the logo
-        if (fadeTrigger.entered) {
+        if (fadeTrigger.entered && endTrigger.end) {
             StartCoroutine("fadeLogoIn");
         }
         // when the logo is done fading in, quit the game

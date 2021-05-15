@@ -11,4 +11,10 @@ public class fadeTrigger : MonoBehaviour
             entered = true;
         }
     }
+
+    void OnTriggerExit2D(Collider2D col) {
+        if (col.gameObject.tag == "Player") {
+            entered = false;
+        }
+    }
 }
