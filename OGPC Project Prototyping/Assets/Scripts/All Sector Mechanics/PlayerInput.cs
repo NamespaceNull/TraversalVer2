@@ -53,11 +53,13 @@ public class PlayerInput : MonoBehaviour
 
         if (!menuOpen)
         {
+            /*
             if (Input.GetKeyDown("j"))
             {
                 StartCoroutine(dManager.GetComponent<darknessManager>().fadeToDark());
             }
-            else if (Input.GetKeyDown("k"))
+            */
+            if (Input.GetKeyDown("k"))
             {
                 StartCoroutine(dManager.GetComponent<darknessManager>().fadeToLight());
             }

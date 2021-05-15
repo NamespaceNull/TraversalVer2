@@ -16,6 +16,7 @@ TagManager:
   - Narrative Trigger
   - UIPermanent
   - UISituational
+  - Trigger
   layers:
   - Default
   - TransparentFX
